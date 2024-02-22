@@ -3,7 +3,7 @@ site_description: 'Single Sign-On (SSO) Kepri Usage Documentation'
 site_author: 'KIIS Kominfo Kepri'
 docs_dir: docs/
 repo_name: 'kiiskominfokepri/sso-kepri-documentation'
-repo_url: https://kiiskominfokepri.github.io/sso-kepri-documentation
+repo_url: https://github.com/kiiskominfokepri/sso-kepri-documentation
 theme:  
   name: material
   # custom_dir: overrides
