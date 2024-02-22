@@ -6,7 +6,7 @@ repo_name: 'kiiskominfokepri/sso-kepri-documentation'
 repo_url: https://kiiskominfokepri.github.io/sso-kepri-documentation
 theme:  
   name: material
-  custom_dir: overrides
+  # custom_dir: overrides
   features:
     - content.code.copy  
   palette:
