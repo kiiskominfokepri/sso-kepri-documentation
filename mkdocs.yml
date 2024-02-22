@@ -1,10 +1,22 @@
-site_name: Test docs
-site_description: 'A docs test'
-site_author: 'Michael Hausenblas'
+site_name: 'SSO Kepri Documentation'
+site_description: 'Single Sign-On (SSO) Kepri Usage Documentation'
+site_author: 'KIIS Kominfo Kepri'
 docs_dir: docs/
-repo_name: 'mhausenblas/mkdocs-template'
-repo_url: 'https://github.com/mhausenblas/mkdocs-template'
+repo_name: 'kiiskominfokepri/sso-kepri-documentation'
+repo_url: https://kiiskominfokepri.github.io/sso-kepri-documentation
+theme:  
+  name: material
+  custom_dir: overrides
+  features:
+    - content.code.copy  
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 nav:
     - Home: index.md
-theme:
-  name: 'material'
