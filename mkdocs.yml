@@ -19,4 +19,9 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 nav:
-    - Home: index.md
+  - Home: index.md
+  - Client Registration: client-registration.md
+  - Server-Side Apps: server-side-apps.md
+  - Mobile & Native Apps: mobile-and-native-apps.md
+  - License: license.md
+  - About: about.md
