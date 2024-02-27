@@ -20,6 +20,8 @@ theme:
         name: Switch to light mode
 nav:
   - Home: index.md
+  - OIDC Scopes: scopes.md
+  - Endpoints: endpoints.md
   - Client Registration: client-registration.md
   - Server-Side Apps: server-side-apps.md
   - Mobile & Native Apps: mobile-and-native-apps.md
