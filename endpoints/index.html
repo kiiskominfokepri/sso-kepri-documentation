@@ -1,0 +1,707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Single Sign-On (SSO) Kepri Usage Documentation">
+      
+      
+        <meta name="author" content="KIIS Kominfo Kepri">
+      
+      
+      
+        <link rel="prev" href="../scopes/">
+      
+      
+        <link rel="next" href="../client-registration/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Endpoints - SSO Kepri Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#endpoints" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SSO Kepri Documentation" class="md-header__button md-logo" aria-label="SSO Kepri Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SSO Kepri Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Endpoints
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kiiskominfokepri/sso-kepri-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kiiskominfokepri/sso-kepri-documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SSO Kepri Documentation" class="md-nav__button md-logo" aria-label="SSO Kepri Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SSO Kepri Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kiiskominfokepri/sso-kepri-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kiiskominfokepri/sso-kepri-documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scopes/" class="md-nav__link">
+        OIDC Scopes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Endpoints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Endpoints
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#well-known-discovery-url" class="md-nav__link">
+    Well-known discovery URL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authauthorize-get" class="md-nav__link">
+    /auth/authorize (GET)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authtoken-post" class="md-nav__link">
+    /auth/token (POST)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authlogout-get-or-post" class="md-nav__link">
+    /auth/logout (GET or POST)
+  </a>
+  
+    <nav class="md-nav" aria-label="/auth/logout (GET or POST)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#userinfo-get-or-post" class="md-nav__link">
+    /userinfo (GET or POST)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-registration/" class="md-nav__link">
+        Client Registration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server-side-apps/" class="md-nav__link">
+        Server-Side Apps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-and-native-apps/" class="md-nav__link">
+        Mobile & Native Apps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#well-known-discovery-url" class="md-nav__link">
+    Well-known discovery URL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authauthorize-get" class="md-nav__link">
+    /auth/authorize (GET)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authtoken-post" class="md-nav__link">
+    /auth/token (POST)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authlogout-get-or-post" class="md-nav__link">
+    /auth/logout (GET or POST)
+  </a>
+  
+    <nav class="md-nav" aria-label="/auth/logout (GET or POST)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#userinfo-get-or-post" class="md-nav__link">
+    /userinfo (GET or POST)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="endpoints">Endpoints</h1>
+<h2 id="well-known-discovery-url">Well-known discovery URL</h2>
+<p>You can find a link to the well-known discovery URL by going to the root of Goiabada ("/"). </p>
+<p><code>https://sso.kepriprov.go.id/.well-known/openid-configuration</code></p>
+<p>This endpoint will show the capabilities that are supported by Goiabada.</p>
+<h2 id="authauthorize-get">/auth/authorize (GET)</h2>
+<p>The authorize endpoint is used to request authorization codes via the browser. This process normally involves authentication of the end-user and giving consent, when required.</p>
+<p>Parameters (* are mandatory):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>client_id</td>
+<td>The client identifier.</td>
+</tr>
+<tr>
+<td>redirect_uri</td>
+<td>The redirect URI is the callback entry point of the app. In other words, it's the location where the authorization server sends the user once the <code>/auth/authorize</code> process completes. This must exactly match one of the allowed redirect URIs for the client.</td>
+</tr>
+<tr>
+<td>response_type</td>
+<td><code>code</code> is the only value supported - for the authorization code flow with PKCE.</td>
+</tr>
+<tr>
+<td>code_challenge_method</td>
+<td><code>S256</code> is the only value supported - for a SHA256 hash of the code verifier.</td>
+</tr>
+<tr>
+<td>code_challenge</td>
+<td>A random string between 43 and 128 characters long.</td>
+</tr>
+<tr>
+<td>response_mode</td>
+<td>Supported values: <code>query</code>, <code>fragment</code> or <code>form_post</code>. With <code>query</code> the authorization response parameters are encoded in the query string of the <code>redirect_uri</code>. With <code>fragment</code> they are encoded in the fragment (#). And <code>form_post</code> will make the parameters be encoded as HTML form values that are auto-submitted in the browser, via HTTP POST.</td>
+</tr>
+<tr>
+<td>max_age</td>
+<td>If the user's authentication timestamp exceeds the max age (in seconds), they will have to re-authenticate</td>
+</tr>
+<tr>
+<td>acr_values</td>
+<td>Supported values are: <code>urn:goiabada:pwd</code>, <code>urn:goiabada:pwd:otp_ifpossible</code> or <code>urn:goiabada:pwd:otp_mandatory</code>. This will override the default ACR level configured in the client for this authorization request. See <a href="#default-acr-level">Default ACR level</a>.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>Any string. Goiabada will echo back the state value on the token response, for CSRF/replay protection.</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>Any string. Goiabada will echo back the nonce value in the identity token, as a claim, for replay protection.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>One or more registered scopes, separated by a space character. A registered scope can be either a <code>resource:permission</code> or an OIDC scope. See <a href="#scope">Scope</a> and <a href="#openid-connect-scopes">OpenID Connect scopes</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="authtoken-post">/auth/token (POST)</h2>
+<p>The token endpoint serves the purpose of requesting tokens. This can happen either through the authorization code flow, involving the exchange of an authorization code for tokens, or through the client credentials flow, where a client directly requests tokens.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grant_type</td>
+<td>Supported grant types are <code>authorization_code</code> (to exchange an authorization code for tokens), <code>client_credentials</code> (for the client credentials flow) or <code>refresh_token</code> (to use a refresh token).</td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>The client identifier.</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>The client secret, if it's a confidential client.</td>
+</tr>
+<tr>
+<td>redirect_uri</td>
+<td>Required for the <code>authorization_code</code> grant type.</td>
+</tr>
+<tr>
+<td>code</td>
+<td>The authorization code. Required for the <code>authorization_code</code> grant type.</td>
+</tr>
+<tr>
+<td>code_verifier</td>
+<td>This is the code verifier associated with the PKCE request, initially generated by the app before the authorization request. It represents the original string from which the <code>code_challenge</code> was derived.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>This parameter is used in the <code>client_credentials</code> and <code>refresh_token</code> grant types. In <code>client_credentials</code> grant type, it's a mandatory parameter, and it should encompass one or more registered scopes, separated by a space character. These scopes represent the requested permissions in the format of <code>resource:permission</code>. <br /><br />For the <code>refresh_token</code> grant type, the scope parameter is optional and serves to restrict the original scope to a more specific and narrower subset.</td>
+</tr>
+<tr>
+<td>refresh_token</td>
+<td>The refresh token, required for the <code>refresh_token</code> grant type.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="authlogout-get-or-post">/auth/logout (GET or POST)</h2>
+<p>This endpoint enables the client application to initiate a logout. The client application calls this logout endpoint on the auth server. Upon successful logout from the auth server, the user agent is then redirected to a logout link within the client application. This implementation aligns with the <a href="https://openid.net/specs/openid-connect-rpinitiated-1_0.html">OpenID Connect RP-Initiated Logout 1.0 protocol</a>.</p>
+<p>If the <code>/auth/logout</code> endpoint is invoked without parameters, it will display a logout consent screen, prompting the user to confirm their intention to log out. Moreover, there will be no redirection to the client application in this scenario.</p>
+<p>The recommended way of calling <code>/auth/logout</code> involves including additional parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id_token_hint</td>
+<td>The previously issued id token.</td>
+</tr>
+<tr>
+<td>post_logout_redirect_uri</td>
+<td>A post-logout URI, which must be pre-registered with the client as a redirect URI. Once the logout is finalized on the authentication server, the user agent will be redirected to this post-logout URI. This allows for the termination of the session on the client application as well.</td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>The client identifier. Mandatory if the <code>id_token_hint</code> parameter is encrypted with the client secret.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>Any arbitraty string that will be echoed back in the <code>post_logout_redirect_uri</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>The two possible routes are:</p>
+<ol>
+<li><code>id_token_hint</code> (unencrypted) + <code>post_logout_redirect_uri</code> + <code>state</code> (optional).  </li>
+<li><code>id_token_hint</code> (encrypted with AES GCM) + <code>post_logout_redirect_uri</code> + <code>client_id</code> + <code>state</code> (optional).  </li>
+</ol>
+<p>Encrypting the <code>id_token_hint</code> (option 2) enhances security by preventing the exposure of the ID token on the client side. Without encryption, calling this endpoint with an unencrypted <code>id_token_hint</code> could potentially expose personally identifiable information (PII) and other claims that are inside of the id token, such as the client identifier. You must URL-encode the resulting base64 string, when sending it as querystring parameter to <code>/auth/logout</code>.</p>
+<h3 id="userinfo-get-or-post">/userinfo (GET or POST)</h3>
+<p>The UserInfo endpoint, a component of OpenID Connect, serves the purpose of retrieving identity information about a user.</p>
+<p>The caller needs to send a valid access token to be able to access this endpoint. This is done by adding the <code>Authorization: Bearer token-value</code> header to the HTTP request.</p>
+<p>The endpoint validates the presence of the <code>authserver:userinfo</code> scope within the access token. If this scope is present, the endpoint responds by providing claims about the user. </p>
+<p>Please note that you don't need to manually request the <code>authserver:userinfo</code> scope in the authorization request. Instead, it will be automatically included in the access token whenever any OpenID Connect scope is included in the request.</p>
+<p>The specific claims returned by the UserInfo endpoint depend on the OpenID Connect scopes included in the access token. For instance, if the <code>openid</code> and <code>email</code> scopes are present, the endpoint will return the <code>sub</code> (subject) claim from the <code>openid</code> scope, as well as the <code>email</code> and <code>email_verified</code> claims from the email scope.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
