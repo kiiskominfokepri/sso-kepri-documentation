@@ -162,7 +162,7 @@ Sekarang Anda harus membuat dua route di dalam file `routes/web.php`. Kedua rout
 1. `/auth/redirect` [GET], untuk meneruskan ke halaman autentikasi SSO-KEPRI.  
 2. `/auth/callback` [GET], untuk menghandle `callback` dari SSO-KEPRI. Dapat diolah sesuai kebutuhan, misal: (mencari data pengguna aplikasi yang terkait dengan email SSO, melakukan otomasi login berdasarkan akun SSO yang didapat dari callback, dll).  
 
-```php
+```php-inline
 // ... isi file routes/web.php saat ini
 
 Route::get('/auth/redirect', function () {
