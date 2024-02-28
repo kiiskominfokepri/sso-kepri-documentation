@@ -27,3 +27,13 @@ nav:
   - Mobile & Native Apps: mobile-and-native-apps.md
   - License: license.md
   - About: about.md
+markdown_extensions:
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - pymdownx.inlinehilite:
+  - pymdownx.superfences:
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
