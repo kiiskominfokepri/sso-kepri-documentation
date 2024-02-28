@@ -28,12 +28,15 @@ nav:
   - License: license.md
   - About: about.md
 markdown_extensions:
-  - markdown.extensions.codehilite:
-      guess_lang: false
-  - pymdownx.inlinehilite:
-  - pymdownx.superfences:
+  - pymdownx.highlight:
       extend_pygments_lang:
-        - name: php
+        - name: php-inline
           lang: php
           options:
             startinline: true
+        - name: pycon3
+          lang: pycon
+          options:
+            python3: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite:
